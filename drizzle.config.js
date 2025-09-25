@@ -1,10 +1,11 @@
 import 'dotenv/config';
  
 export default {
-  schema: './db/schema.js', // Path ke file skema kita
-  out: './drizzle', // Folder untuk menyimpan hasil migrasi
-  driver: 'pg', // Driver database yang digunakan
+  dialect: 'postgresql',
+  schema: './db/schema.js',
+  out: './drizzle',
   dbCredentials: {
-    connectionString: process.env.DATABASE_URL, // Mengambil URL dari file .env
+    url: process.env.DATABASE_URL,
   },
 };
+ 
